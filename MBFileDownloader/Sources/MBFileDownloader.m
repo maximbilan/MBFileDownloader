@@ -10,4 +10,16 @@
 
 @implementation MBFileDownloader
 
+- (id)initWithURL:(NSURL *)url toFilePath:(NSString *)filePath
+{
+	return self;
+}
+
+- (void)downloadWithSuccess:(void(^)(void))successBlock
+					 update:(void(^)(float value))updateBlock
+					failure:(void(^)(NSError *error))failureBlock
+{
+	
+}
+
 @end
