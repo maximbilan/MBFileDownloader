@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D8932C11AE4053E004C899E /* MBFileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8932C01AE4053E004C899E /* MBFileDownloader.m */; };
 		6DABE2991AE4040200647910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DABE2981AE4040200647910 /* main.m */; };
 		6DABE29C1AE4040200647910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DABE29B1AE4040200647910 /* AppDelegate.m */; };
 		6DABE29F1AE4040200647910 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DABE29E1AE4040200647910 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D8932BF1AE4053E004C899E /* MBFileDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFileDownloader.h; sourceTree = "<group>"; };
+		6D8932C01AE4053E004C899E /* MBFileDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFileDownloader.m; sourceTree = "<group>"; };
 		6DABE2931AE4040200647910 /* MBFileDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBFileDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DABE2971AE4040200647910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DABE2981AE4040200647910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D8932BE1AE40528004C899E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6D8932BF1AE4053E004C899E /* MBFileDownloader.h */,
+				6D8932C01AE4053E004C899E /* MBFileDownloader.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		6DABE28A1AE4040200647910 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +93,7 @@
 		6DABE2951AE4040200647910 /* MBFileDownloader */ = {
 			isa = PBXGroup;
 			children = (
+				6D8932BE1AE40528004C899E /* Sources */,
 				6DABE29A1AE4040200647910 /* AppDelegate.h */,
 				6DABE29B1AE4040200647910 /* AppDelegate.m */,
 				6DABE29D1AE4040200647910 /* ViewController.h */,
@@ -222,6 +235,7 @@
 				6DABE29F1AE4040200647910 /* ViewController.m in Sources */,
 				6DABE29C1AE4040200647910 /* AppDelegate.m in Sources */,
 				6DABE2991AE4040200647910 /* main.m in Sources */,
+				6D8932C11AE4053E004C899E /* MBFileDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +432,7 @@
 				6DABE2B81AE4040200647910 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6DABE2B91AE4040200647910 /* Build configuration list for PBXNativeTarget "MBFileDownloaderTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +441,7 @@
 				6DABE2BB1AE4040200647910 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
