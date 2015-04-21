@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *linkTextfile;
 @property (weak, nonatomic) IBOutlet UIButton *downloadButton;
@@ -16,6 +16,8 @@
 @end
 
 @implementation ViewController
+
+#pragma mark - UIViewController methods
 
 - (void)viewDidLoad
 {
@@ -29,9 +31,40 @@
 	// Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Downloading
+
+- (void)downloadFile
+{
+	if (_linkTextfile.text.length > 0) {
+		
+	}
+	else {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+														message:@"Enter the link..."
+													   delegate:self
+											  cancelButtonTitle:@"OK"
+											  otherButtonTitles:nil];
+		[alert show];
+	}
+}
+
+#pragma mark - Actions
+
 - (IBAction)downloadAction:(UIButton *)sender
 {
-	
+	[self downloadFile];
+}
+
+- (IBAction)tapOnView:(UITapGestureRecognizer *)sender
+{
+	[_linkTextfile resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+	[_linkTextfile resignFirstResponder];
+	[self downloadFile];
+	return YES;
 }
 
 @end
