@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 	s.name         = "MBFileDownloader"
 	s.version      = "0.1"
-	s.summary      = "Simple iOS File Downloader"
+	s.summary      = "File Downloader"
 	s.description  = "Simple iOS File Downloader"
 	s.homepage     = "https://github.com/maximbilan/MBFileDownloader"
 	s.license      = { :type => "MIT" }
