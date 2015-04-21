@@ -90,7 +90,6 @@
 	NSInteger code = [httpResponse statusCode];
 	
 	if (code == 200) {
-		_state = MBFileDownloaderStateSuccess;
 		contentLength = [response expectedContentLength];
 	}
 	else {

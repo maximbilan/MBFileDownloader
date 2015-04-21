@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MBFileDownloader.h"
 
 @interface ViewController () <UITextFieldDelegate>
 
@@ -37,6 +38,22 @@
 {
 	if (_linkTextfile.text.length > 0) {
 		
+		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+		NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+		NSString *lastPathComponent = _linkTextfile.text.lastPathComponent;
+		NSString *filePath = [basePath stringByAppendingPathComponent:lastPathComponent];
+		NSURL *url = [NSURL URLWithString:_linkTextfile.text];
+		
+		NSLog(@"%@", filePath);
+		
+		MBFileDownloader *fileDownloader = [[MBFileDownloader alloc] initWithURL:url toFilePath:filePath];
+		[fileDownloader downloadWithSuccess:^{
+			NSLog(@"success");
+		} update:^(float value) {
+			NSLog(@"%f", value);
+		} failure:^(NSError *error) {
+			NSLog(@"%@", error);
+		}];
 	}
 	else {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
