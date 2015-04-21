@@ -2,6 +2,7 @@
 
 Simple file downloader for iOS based on <i>NSURLConnection</i>.
 <br>
+<br>
 <b>How to install:</b><br>
 Using Cocoapods:
 <pre>
