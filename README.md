@@ -8,7 +8,7 @@ Using Cocoapods:
 <pre>
 pod 'MBFileDownloader'
 </pre>
-Just copy the following file to your project.
+Or just copy the following files into your project:
 <pre>
 MBFileDownloader.h
 MBFileDownloader.mm
