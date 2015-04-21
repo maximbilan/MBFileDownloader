@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 	s.name         = "MBFileDownloader"
-	s.version      = "0.1"
+	s.version      = "0.2"
 	s.summary      = "File Downloader"
-	s.description  = "Simple iOS File Downloader"
+	s.description  = "Simple file downloader for iOS based on NSURLConnection. Downloader writes the data into file, not into memory."
 	s.homepage     = "https://github.com/maximbilan/MBFileDownloader"
 	s.license      = { :type => "MIT" }
 	s.author             = { "Maxim Bilan" => "maximb.mail@gmail.com" }
