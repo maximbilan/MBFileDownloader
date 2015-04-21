@@ -1,20 +1,21 @@
 # MBFileDownloader
 
-Simple file downloader for iOS based on NSURLConnection.
+Simple file downloader for iOS based on <i>NSURLConnection</i>.
 
-How to install:
+<b>How to install:</b>
 
 Just copy MBFileDownloader.h and MBFileDownloader.mm to your project.
 
-How to use:
+<b>How to use:</b>
 
 <pre>
-MBFileDownloader *fileDownloader = [[MBFileDownloader alloc] initWithURL:url toFilePath:filePath];
+MBFileDownloader *fileDownloader = [[MBFileDownloader alloc] initWithURL:url
+							      toFilePath:filePath];
 [fileDownloader downloadWithSuccess:^{
-			NSLog(@"success");
-		} update:^(float value) {
-			NSLog(@"%f", value);
-		} failure:^(NSError *error) {
-			NSLog(@"%@", error);
-		}];
+    NSLog(@"success");
+} update:^(float value) {
+    NSLog(@"%f", value);
+} failure:^(NSError *error) {
+    NSLog(@"%@", error);
+}];
 </pre>
