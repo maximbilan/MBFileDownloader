@@ -1,8 +1,8 @@
 # MBFileDownloader
 
 Simple file downloader for iOS based on <i>NSURLConnection</i>.
-
-<b>How to install:</b>
+<br>
+<b>How to install:</b><br>
 Using Cocoapods:
 <pre>
 pod 'MBFileDownloader'
@@ -12,7 +12,7 @@ Just copy the following file to your project.
 MBFileDownloader.h
 MBFileDownloader.mm
 </pre>
-
+<br>
 <b>How to use:</b>
 <pre>
 MBFileDownloader *fileDownloader = [[MBFileDownloader alloc] initWithURL:url toFilePath:filePath];
