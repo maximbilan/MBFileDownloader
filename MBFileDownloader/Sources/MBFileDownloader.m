@@ -14,8 +14,6 @@
 	NSURLConnection *urlConnection;
 	long long contentLength;
 	long long downloadedLength;
-	BOOL working;
-	BOOL success;
 	
 	void(^successBlock)(void);
 	void(^failureBlock)(NSError* error);
@@ -24,6 +22,7 @@
 
 @property (nonatomic, readwrite) NSURL *url;
 @property (nonatomic, readwrite) NSString *filePath;
+@property (nonatomic, readwrite) MBFileDownloaderState state;
 @property (nonatomic, readwrite) BOOL isDownloaded;
 
 @end
@@ -35,8 +34,9 @@
 	if ((self = [super init])) {
 		_url = url;
 		_filePath = filePath;
+		_state = MBFileDownloaderStateIdle;
+		_isDownloaded = NO;
 	}
-	
 	return self;
 }
 
@@ -56,7 +56,7 @@
 		return;
 	}
 	
-	working = YES;
+	_state = MBFileDownloaderStateProcessing;
 	
 	urlConnection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:_url]
 													delegate:self];
@@ -65,10 +65,9 @@
 
 - (void)cancel
 {
-	if (!success) {
+	if (_state != MBFileDownloaderStateSuccess) {
 		[urlConnection cancel];
 		urlConnection = nil;
-		
 		[self stopAndDelete:YES];
 	}
 }
@@ -77,62 +76,64 @@
 {
 	[fileHandle closeFile];
 	
-	if (delete)
-	{
-		NSError* io_err;
-		[[NSFileManager defaultManager] removeItemAtPath:_filePath error:&io_err];
+	if (delete) {
+		NSError *error;
+		[[NSFileManager defaultManager] removeItemAtPath:_filePath error:&error];
 	}
 	
-	working = NO;
+	_state = MBFileDownloaderStateIdle;
 }
 
 - (void)connection:(NSURLConnection*)connection didReceiveResponse:(NSURLResponse*)response
 {
-	NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+	NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
 	NSInteger code = [httpResponse statusCode];
 	
-	if (code == 200)
-	{
+	if (code == 200) {
+		_state = MBFileDownloaderStateSuccess;
 		contentLength = [response expectedContentLength];
-		success = YES;
 	}
-	else
-	{
+	else {
+		_state = MBFileDownloaderStateFailure;
 		failureBlock([[NSError alloc] initWithDomain:@"MBFileDownloader"
 												code:code
-										   userInfo:@{ NSLocalizedDescriptionKey: [NSString stringWithFormat:@"HTTP response error code: %@", @(code)] }]);
+											userInfo:@{ NSLocalizedDescriptionKey: [NSString stringWithFormat:@"HTTP response error code: %@", @(code)] }]);
 		[self stopAndDelete:YES];
 	}
 }
 
 - (void)connection:(NSURLConnection*)connection didReceiveData:(NSData*)data
 {
-	if (!working)
+	if (_state != MBFileDownloaderStateProcessing) {
 		return;
+	}
 	
 	[fileHandle writeData:data];
 	
 	downloadedLength += [data length];
-	if (contentLength)
-	{
+	if (contentLength) {
 		updateBlock((float)downloadedLength / (float)contentLength);
 	}
 }
 
 - (void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error
 {
-	if (!working)
+	if (_state != MBFileDownloaderStateProcessing) {
 		return;
+	}
 	
+	_state = MBFileDownloaderStateFailure;
 	[self stopAndDelete:YES];
 	failureBlock(error);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection*)connection
 {
-	if (!working)
+	if (_state != MBFileDownloaderStateProcessing) {
 		return;
+	}
 	
+	_state = MBFileDownloaderStateSuccess;
 	[self stopAndDelete:NO];
 	successBlock();
 }

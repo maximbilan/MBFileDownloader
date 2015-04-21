@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, MBFileDownloaderState)
+{
+	MBFileDownloaderStateIdle,
+	MBFileDownloaderStateProcessing,
+	MBFileDownloaderStateSuccess,
+	MBFileDownloaderStateFailure
+};
+
 @interface MBFileDownloader : NSObject
 
 - (id)initWithURL:(NSURL *)url toFilePath:(NSString *)filePath;
@@ -18,6 +26,7 @@
 
 @property (nonatomic, readonly) NSURL *url;
 @property (nonatomic, readonly) NSString *filePath;
+@property (nonatomic, readonly) MBFileDownloaderState state;
 @property (nonatomic, readonly) BOOL isDownloaded;
 
 @end
