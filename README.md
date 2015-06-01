@@ -33,4 +33,4 @@ MBFileDownloader *fileDownloader = [[MBFileDownloader alloc] initWithURL:url toF
 
 ## License
 
-iOS Calendar is available under the MIT license. See the LICENSE file for more info.
+MBFileDownloader is available under the MIT license. See the LICENSE file for more info.
