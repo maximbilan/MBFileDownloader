@@ -30,3 +30,7 @@ MBFileDownloader *fileDownloader = [[MBFileDownloader alloc] initWithURL:url toF
     NSLog(@"%@", error);
 }];
 </pre>
+
+## License
+
+iOS Calendar is available under the MIT license. See the LICENSE file for more info.
