@@ -7,8 +7,7 @@
 Simple file downloader for iOS based on <i>NSURLConnection</i>.
 Downloader writes the data into file, not into memory.
 <br>
-<br>
-## How to install:
+## How to install
 Using Cocoapods:
 <pre>
 pod 'MBFileDownloader'
@@ -18,7 +17,6 @@ Or just copy the following files into your project:
 MBFileDownloader.h
 MBFileDownloader.mm
 </pre>
-<br>
 ## How to use
 <pre>
 MBFileDownloader *fileDownloader = [[MBFileDownloader alloc] initWithURL:url toFilePath:filePath];
