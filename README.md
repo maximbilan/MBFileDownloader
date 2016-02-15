@@ -14,7 +14,7 @@ pod 'MBFileDownloader'
 </pre>
 <b>Manual</b>:
 <pre>
-Or just copy the following files into your project:
+Just copy the following files into your project:
 
 MBFileDownloader.h
 MBFileDownloader.mm
