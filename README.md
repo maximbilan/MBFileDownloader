@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/MBFileDownloader.svg?style=flat)](http://cocoadocs.org/docsets/MBFileDownloader)
 [![Platform](https://img.shields.io/cocoapods/p/MBFileDownloader.svg?style=flat)](http://cocoadocs.org/docsets/MBFileDownloader)
 
-Simple file downloader for iOS based on <i>NSURLConnection</i>.
+Simple file downloader for iOS based on <i>NSURLConnection</i>.<br>
 Downloader writes the data into file, not into memory.
 <br>
 ## How to install
