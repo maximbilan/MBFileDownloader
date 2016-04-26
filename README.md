@@ -16,8 +16,8 @@ pod 'MBFileDownloader'
 <pre>
 Just copy the following files into your project:
 
-MBFileDownloader.h
-MBFileDownloader.mm
+<i>MBFileDownloader.h</i>
+<i>MBFileDownloader.mm</i>
 </pre>
 ## How to use
 <pre>
