@@ -14,10 +14,10 @@ pod 'MBFileDownloader'
 </pre>
 <b>Manual</b>:
 <pre>
-Just copy the following files into your project:
+<i>Just copy the following files into your project:</i>
 
-<i>MBFileDownloader.h</i>
-<i>MBFileDownloader.mm</i>
+MBFileDownloader.h
+MBFileDownloader.mm
 </pre>
 ## How to use
 <pre>
