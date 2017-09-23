@@ -3,6 +3,8 @@
 [![Version](https://img.shields.io/cocoapods/v/MBFileDownloader.svg?style=flat)](http://cocoadocs.org/docsets/MBFileDownloader)
 [![License](https://img.shields.io/cocoapods/l/MBFileDownloader.svg?style=flat)](http://cocoadocs.org/docsets/MBFileDownloader)
 [![Platform](https://img.shields.io/cocoapods/p/MBFileDownloader.svg?style=flat)](http://cocoadocs.org/docsets/MBFileDownloader)
+[![CocoaPods](https://img.shields.io/cocoapods/dt/MBFileDownloader.svg)](https://cocoapods.org/pods/MBFileDownloader)
+[![CocoaPods](https://img.shields.io/cocoapods/dm/MBFileDownloader.svg)](https://cocoapods.org/pods/MBFileDownloader)
 
 Simple file downloader for <i>iOS</i> based on <a href="https://developer.apple.com/library/prerelease/mac/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html">NSURLConnection</a>.<br>
 Downloader writes the data into file, not into memory.
