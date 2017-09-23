@@ -7,7 +7,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/dm/MBFileDownloader.svg)](https://cocoapods.org/pods/MBFileDownloader)
 
 Simple file downloader for <i>iOS</i> based on <a href="https://developer.apple.com/library/prerelease/mac/documentation/Cocoa/Reference/Foundation/Classes/NSURLConnection_Class/index.html">NSURLConnection</a>.<br>
-Downloader writes the data into file, not into memory.
+Downloader writes the data into a file, not into memory.
 <br>
 ## Installation
 <b>CocoaPods</b>:
